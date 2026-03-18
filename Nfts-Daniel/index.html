@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Countdown</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0b0b1a;
+    }
+
+    .card {
+        background: #f4b400;
+        border-radius: 25px;
+        padding: 60px;
+        margin: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000;
+    }
+
+    .left h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+
+    .left p {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .expired {
+        margin-top: 40px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .avatars {
+        display: flex;
+        gap: 20px;
+        position: relative;
+    }
+
+    .avatars img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: relative;
+        opacity: 0;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+
+    .avatar1,
+    .avatar2 {
+        animation-name: fromTopLeft;
+    }
+
+    .avatar3 {
+        animation-name: fromTopRight;
+    }
+
+    .avatar1 {
+        animation-delay: 0.1s;
+    }
+
+    .avatar2 {
+        animation-delay: 0.3s;
+    }
+
+    .avatar3 {
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fromTopLeft {
+        from {
+            transform: translate(-120px, -120px);
+            opacity: 0;
+        }
+        to {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fromTopRight {
+        from {
+            transform: translate(120px, -120px);
+            opacity: 0;
+        }
+        to {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
+
+    .timer {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="left">
+        <h1>Remaining Time</h1>
+        <p>It is a long established fact that a reader will distracted.</p>
+        <p class="expired">Countdown Expired !</p>
+    </div>
+
+    <div class="avatars">
+        <img class="avatar1" src="gl-img-01.jpg">
+        <img class="avatar2" src="gl-img-02.jpg">
+        <img class="avatar3" src="gl-img-03.jpg">
+    </div>
+</div>
+</body>
+</html>
